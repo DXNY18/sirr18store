@@ -12,7 +12,7 @@ const getApiBaseUrl = () => {
     // Jika sedang di localhost, gunakan path lokal. Jika di Vercel, gunakan URL InfinityFree.
     return window.location.hostname === "localhost"
       ? `${window.location.protocol}//${window.location.hostname}/project_akhir/backend/api`
-      : "https://sirr18-store.infinityfreeapp.com/backend/api"; // <-- GANTI DENGAN URL ASLI ANDA
+      : "https://sirr18store.infinityfreeapp.com/backend/api"; // <-- GANTI DENGAN URL ASLI ANDA
   }
 
   return "http://localhost/project_akhir/backend/api";
