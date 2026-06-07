@@ -1,0 +1,423 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-width: 0;
+  overflow-x: hidden;
+  background: #14182b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img,
+video,
+canvas {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.home-game-grid {
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 169px));
+  gap: clamp(16px, 3vw, 42px) !important;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.game-card {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 169 / 289;
+  border-radius: 12px !important;
+}
+
+.topup-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.topup-card {
+  width: 100% !important;
+}
+
+.payment-method-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+}
+
+.app-modal {
+  padding: 18px;
+}
+
+.app-modal__content {
+  max-height: calc(100vh - 36px);
+  overflow-y: auto;
+}
+
+.desktop-auth-actions {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-account-menu {
+  display: none !important;
+  position: relative;
+}
+
+.mobile-menu-button {
+  min-width: 42px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-icon {
+  width: 18px;
+  display: grid;
+  gap: 4px;
+}
+
+.mobile-menu-icon span {
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.mobile-account-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 1300;
+  width: min(280px, calc(100vw - 24px));
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #334071;
+  border-radius: 14px;
+  background: #182042;
+  color: white;
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.35);
+}
+
+.mobile-account-panel__info {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #10172f;
+  color: #d7def5;
+  font-size: 13px;
+}
+
+.mobile-account-panel__info strong {
+  color: white;
+  font-size: 15px;
+}
+
+.mobile-account-panel__label {
+  color: #8ef7a0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mobile-account-panel__button,
+.mobile-account-panel__link {
+  width: 100%;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 10px;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.mobile-account-panel__button--secondary {
+  background: #2a3550;
+  border: 1px solid #3a4060;
+}
+
+.mobile-account-panel__button--danger {
+  background: #f44336;
+}
+
+@media (max-width: 1100px) {
+  .site-navbar {
+    align-items: stretch !important;
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px 18px !important;
+  }
+
+  .site-navbar__left,
+  .site-navbar__right {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .site-navbar__left {
+    justify-content: space-between;
+  }
+
+  .site-navbar__right {
+    justify-content: flex-start;
+  }
+
+  .site-navbar__search {
+    flex: 1 1 320px;
+  }
+
+  .site-navbar__search-form,
+  .site-navbar__search-form input {
+    width: 100% !important;
+  }
+
+}
+
+@media (max-width: 760px) {
+  .site-navbar {
+    align-items: center !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: 8px !important;
+    padding: 10px 12px !important;
+  }
+
+  .site-navbar__left {
+    flex: 0 0 auto;
+    width: auto !important;
+    gap: 8px !important;
+    justify-content: flex-start !important;
+  }
+
+  .site-navbar__right {
+    flex: 1 1 180px;
+    width: auto !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .site-navbar__left img {
+    height: 26px !important;
+  }
+
+  .site-navbar__left button,
+  .site-navbar__right button,
+  .site-navbar__right a button {
+    padding: 8px 10px !important;
+    font-size: 13px !important;
+    white-space: nowrap;
+  }
+
+  .desktop-auth-actions {
+    display: none !important;
+  }
+
+  .mobile-account-menu {
+    display: block !important;
+    flex: 0 0 auto;
+  }
+
+  .site-navbar__search {
+    flex: 0 1 170px !important;
+    min-width: 0 !important;
+    order: 0;
+  }
+
+  .site-navbar__search-form {
+    width: 100% !important;
+  }
+
+  .site-navbar__search-form input {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .site-navbar__search-dropdown {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .home-page,
+  .detail-page,
+  .payment-page__content,
+  .admin-login-page {
+    padding: 14px !important;
+  }
+
+  .home-banner__viewport {
+    min-height: 150px !important;
+    aspect-ratio: 16 / 7 !important;
+  }
+
+  .home-section-heading {
+    font-size: 18px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .home-filters {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    margin-bottom: 14px !important;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .home-filters button {
+    flex: 0 0 auto;
+    padding: 6px 11px !important;
+    font-size: 12px !important;
+    white-space: nowrap;
+  }
+
+  .home-game-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px !important;
+  }
+
+  .home-search-results {
+    gap: 10px !important;
+  }
+
+  .detail-hero {
+    height: 220px !important;
+  }
+
+  .detail-hero__content {
+    left: 14px !important;
+    right: 14px !important;
+    top: auto !important;
+    bottom: 16px !important;
+    align-items: flex-end !important;
+  }
+
+  .detail-hero__icon {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .detail-hero__title {
+    font-size: 1.55rem !important;
+    line-height: 1.15;
+  }
+
+  .detail-hero__meta {
+    white-space: normal !important;
+    font-size: 0.95rem !important;
+  }
+
+  .detail-box {
+    padding: 14px !important;
+  }
+
+  .topup-grid,
+  .payment-method-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .checkout-row {
+    align-items: stretch !important;
+  }
+
+  .checkout-row > *,
+  .checkout-row button {
+    width: 100%;
+  }
+
+  .payment-columns {
+    display: grid !important;
+    grid-template-columns: 1fr;
+  }
+
+  .payment-main-column,
+  .payment-side-column {
+    min-width: 0 !important;
+    width: 100%;
+  }
+
+  .payment-summary-card {
+    align-items: flex-start !important;
+  }
+
+  .orders-modal__header {
+    align-items: stretch !important;
+    flex-direction: column;
+  }
+
+  .app-modal__content {
+    width: 100% !important;
+    padding: 22px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-navbar__right,
+  .site-navbar__left {
+    display: flex !important;
+  }
+
+  .site-navbar__right {
+    flex-wrap: nowrap !important;
+  }
+
+  .site-navbar__left a,
+  .site-navbar__left button,
+  .site-navbar__right > button,
+  .site-navbar__right > a,
+  .site-navbar__right > a button {
+    width: auto;
+  }
+
+  .site-navbar__search {
+    flex-basis: 135px !important;
+    width: 135px;
+  }
+
+  .site-navbar__search-button {
+    min-width: 48px;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .topup-grid,
+  .payment-method-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .home-game-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .detail-hero {
+    height: 190px !important;
+  }
+
+  .payment-summary-card {
+    display: grid !important;
+    grid-template-columns: auto 1fr;
+  }
+
+  .payment-page h1,
+  .admin-login-page h1 {
+    font-size: 24px !important;
+  }
+}
